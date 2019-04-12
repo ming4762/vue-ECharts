@@ -5,7 +5,7 @@
     <p>mixin 数据 ：{{ testMixinArg }}</p>
     <!-- <Hello type="测试啊啊啊"></Hello> -->
     <!-- <MonitorList :data="['123', '2312', '2312', '21312', '2132', '1231']"></MonitorList> -->
-    <ECharts 
+    <ECharts
       autoresize
       :initOptions="{height: '400px',width:'auto'}"
       :options="options"></ECharts>
@@ -34,6 +34,10 @@ export default class HelloWorld extends Vue<TestMixin> {
   mounted () {
     console.log('这是 _.assign({})')
     console.log('from mixin', this.testMixinArg)
+  }
+
+  private handlemouseover () {
+    console.log(this)
   }
 
   private options = {

@@ -147,7 +147,7 @@ export default {
   // 计算属性
   computed: {
     // 获取div的样式
-    getDivStyle: function() {
+    getDivStyle: function () {
       if (!this.initOptions || !this.initOptions.height) {
         return 'height: 100%;'
       }
@@ -255,11 +255,14 @@ export default {
           chart.group = this.group
         }
         chart.setOption(this.manualOptions || this.options || {}, true)
+        console.log(this.$listeners)
         // 绑定事件
         EVENTS.forEach(event => {
-          chart.on(event, params => {
-            this.$emit(event, params)
-          })
+          if (this.$listeners[event]) {
+            chart.on(event, params => {
+              this.$emit(event, params)
+            })
+          }
         })
         // 绑定autoresize
         if (this.autoresize) {

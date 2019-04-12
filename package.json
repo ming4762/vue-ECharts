@@ -1,6 +1,6 @@
 {
   "name": "vue-echarts-ming",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "echart 组件",
   "author": "ming <zhongming4762@hotmail.com>",
   "private": false,
@@ -21,6 +21,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "echarts": "^4.2.0-rc.2",
+    "eslint-plugin-vue": "^5.2.2",
     "lodash": "^4.17.4",
     "resize-detector": "^0.2.0",
     "vue": "^2.5.17",
