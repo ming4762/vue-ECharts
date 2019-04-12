@@ -104,8 +104,8 @@ export default {
 
   // 生命周期钩子
   created () {
-    if (this.manualUpdate) {
-      // 延迟加载监控options变化
+    if (!this.manualUpdate) {
+      // 延迟加载不监控options变化
       this.$watch('options', (_new, old) => {
         if (!this.chart && _new) {
           this.init()
